@@ -1,0 +1,15 @@
+Router1(config)# router bgp 1
+Router1(config-router)# neighbor 192.20.20.2 remote-as 2
+Router1(config-router)# network 192.10.10.0
+---
+Router2(config)# router ospf 1
+Router2(config-router)# network 192.30.30.0 0.0.0.255 area 0
+Router2(config-router)# default-information originate always
+Router2(config)# router bgp 2
+Router2(config-router)# neighbor 192.20.20.1 remote-as 1
+Router2(config-router)# network 192.30.30.0
+Router2(config-router)# redistribute ospf 1
+---
+Router3(config)# router ospf 1
+Router3(config-router)# network 192.30.30.0 0.0.0.255 area 0
+Router3(config-router)# network 192.30.31.0 0.0.0.255 area 0

@@ -1,0 +1,5 @@
+PC:
+
+IPV4:
+PC1>ip 192.10.10.2
+PC1>write

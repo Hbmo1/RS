@@ -1,0 +1,6 @@
+ Spanning tree:
+
+ R: A, B, C, D
+ Blocked ports don't send configuration BPDU packets.
+ Sent by: designated ports and root ports.
+ Not sent TO root ports NOR TO ports from where the to-be-sent info was learned.

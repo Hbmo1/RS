@@ -1,0 +1,36 @@
+R2:
+
+IPV4:
+R2#configure terminal
+R2(config)#interface f0/0
+R2(config-if)#ip address 192.168.2.2 255.255.255.0
+R2(config-if)#no shutdown
+R2(config-if)#exit
+R2(config)#interface f0/1
+R2(config-if)#ip address 192.168.3.2 255.255.255.0
+R2(config-if)#no shutdown
+R2(config-if)#exit
+R2(config)#exit
+R2#write
+
+IPV6:
+R2#configure terminal
+R2(config)#ipv6 unicast-routing
+R2(config)#interface f0/0
+R2(config-if)#ipv6 address 2001:B:1:1::2/64  
+R2(config-if)#no shutdown
+R2(config-if)#exit
+R2(config)#interface f0/1
+R2(config-if)#ipv6 address 2001:C:1:1::2/64
+R2(config-if)#no shutdown
+R2(config-if)#exit
+R2(config)#exit
+R2#write
+
+R2# show ip interface brief
+R2# show ip route
+R2# show ip arp
+---
+R2# show ipv6 interface brief
+R2# show ipv6 route
+R2# show ipv6 neighbors
